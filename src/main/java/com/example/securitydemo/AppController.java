@@ -9,12 +9,17 @@ import java.security.Principal;
 public class AppController {
 
     @GetMapping("/")
-    public void test(Principal principal) {
-        System.out.println("redirected ................");
+    public Principal test(Principal principal) {
+        return principal;
     }
 
-    @GetMapping("/test")
+    @GetMapping("/new/test")
     public String testApi() {
+        return "working...";
+    }
+
+    @GetMapping("/filter")
+    public String withoutFilter() {
         return "working...";
     }
 }
